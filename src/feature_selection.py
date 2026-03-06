@@ -51,8 +51,9 @@ def select_lasso(X: pd.DataFrame, y: pd.Series) -> list:
 
     plt.figure(figsize=(10, 8))
     plt.barh(imp_df['Feature'], imp_df['Importance'], color='steelblue')
-    plt.title('Top 20 Features Selected by Lasso (L1 Penalty)')
-    plt.xlabel('Absolute Coefficient')
+    # plt.title('Top 20 Features Selected by Lasso (L1 Penalty)', fontsize=16)
+    # plt.xlabel('Absolute Coefficient', fontsize=18)
+    plt.tick_params(axis='both', labelsize=16)
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, 'fig1_lasso_importance.pdf'), dpi=300)
     plt.close()
@@ -79,8 +80,9 @@ def select_rf(X: pd.DataFrame, y: pd.Series, k: int = K_FEATURES) -> list:
 
     plt.figure(figsize=(10, 8))
     plt.barh(imp_df['Feature'], imp_df['Importance'], color='darkorange')
-    plt.title('Top 20 Features by Random Forest Gini Importance')
-    plt.xlabel('Feature Importance Score')
+    # plt.title('Top 20 Features by Random Forest Gini Importance', fontsize=16)
+    # plt.xlabel('Feature Importance Score', fontsize=18)
+    plt.tick_params(axis='both', labelsize=16)
     plt.tight_layout()
     plt.savefig(os.path.join(FIGURES_DIR, 'fig2_rf_importance.pdf'), dpi=300)
     plt.close()
